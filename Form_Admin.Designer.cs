@@ -420,6 +420,7 @@
             this.button_back.TabIndex = 23;
             this.button_back.Text = "Выход";
             this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // button_users
             // 
@@ -560,6 +561,7 @@
             this.Controls.Add(this.button_classes_numberOfSeats_aircrafts);
             this.Controls.Add(this.button_airports_routes_flights);
             this.Controls.Add(this.button_clients_tickets_prices);
+            this.Name = "Form_Admin";
             this.Text = "Form_Admin";
             this.Load += new System.EventHandler(this.Form_Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_users)).EndInit();

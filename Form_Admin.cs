@@ -33,7 +33,9 @@ namespace Airport
         }
         private void button_second_change_Click(object sender, EventArgs e)
         {
-
+            Form_Airports_Routes_Flights form = new Form_Airports_Routes_Flights();
+            form.Show();
+            this.Close();
         }
 
         private void button_classes_numberOfSeats_aircrafts_Click(object sender, EventArgs e)
@@ -42,7 +44,9 @@ namespace Airport
         }
         private void button_third_change_Click(object sender, EventArgs e)
         {
-
+            Form_Classes_NumberOfSeats_Aircrafts form = new Form_Classes_NumberOfSeats_Aircrafts();
+            form.Show();
+            this.Close();
         }
 
         private void button_departures_pilots_Click(object sender, EventArgs e)
@@ -51,7 +55,9 @@ namespace Airport
         }
         private void button_four_change_Click(object sender, EventArgs e)
         {
-
+            Form_Departures_Pilots form = new Form_Departures_Pilots();
+            form.Show();
+            this.Close();
         }
 
         private void button_users_Click(object sender, EventArgs e)
@@ -61,6 +67,13 @@ namespace Airport
         private void button_fifth_change_Click(object sender, EventArgs e)
         {
             Form_Users form = new Form_Users();
+            form.Show();
+            this.Close();
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            Form_Login form = new Form_Login();
             form.Show();
             this.Close();
         }

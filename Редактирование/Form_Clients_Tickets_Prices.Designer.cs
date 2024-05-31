@@ -88,6 +88,20 @@
             this.button_price_delete = new System.Windows.Forms.Button();
             this.button_price_change = new System.Windows.Forms.Button();
             this.button_price_add = new System.Windows.Forms.Button();
+            this.dataGridView_classes = new System.Windows.Forms.DataGridView();
+            this.classesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.classesTableAdapter = new Airport.AirportDataSetTableAdapters.ClassesTableAdapter();
+            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView_departures = new System.Windows.Forms.DataGridView();
+            this.departuresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departuresTableAdapter = new Airport.AirportDataSetTableAdapters.DeparturesTableAdapter();
+            this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDAircraftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDPilotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivalTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_clients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).BeginInit();
@@ -95,6 +109,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_prices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pricesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_classes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_departures)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departuresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_clients
@@ -189,6 +207,7 @@
             this.button_back.TabIndex = 21;
             this.button_back.Text = "button1";
             this.button_back.UseVisualStyleBackColor = false;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // label4
             // 
@@ -197,9 +216,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(12, 180);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 20);
+            this.label4.Size = new System.Drawing.Size(129, 20);
             this.label4.TabIndex = 20;
-            this.label4.Text = "ID passport";
+            this.label4.Text = "passport number";
             // 
             // textBox_idPassport_client
             // 
@@ -337,9 +356,9 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(625, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 20);
+            this.label9.Size = new System.Drawing.Size(97, 20);
             this.label9.TabIndex = 35;
-            this.label9.Text = "Цена";
+            this.label9.Text = "Новая цена";
             // 
             // textBox_ticket_price
             // 
@@ -491,7 +510,7 @@
             this.dataGridView_tickets.DataSource = this.ticketsBindingSource;
             this.dataGridView_tickets.Location = new System.Drawing.Point(500, 277);
             this.dataGridView_tickets.Name = "dataGridView_tickets";
-            this.dataGridView_tickets.Size = new System.Drawing.Size(478, 296);
+            this.dataGridView_tickets.Size = new System.Drawing.Size(531, 296);
             this.dataGridView_tickets.TabIndex = 49;
             // 
             // ticketsBindingSource
@@ -544,7 +563,7 @@
             this.iDDepartureDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dataGridView_prices.DataSource = this.pricesBindingSource;
-            this.dataGridView_prices.Location = new System.Drawing.Point(984, 277);
+            this.dataGridView_prices.Location = new System.Drawing.Point(1037, 277);
             this.dataGridView_prices.Name = "dataGridView_prices";
             this.dataGridView_prices.Size = new System.Drawing.Size(478, 296);
             this.dataGridView_prices.TabIndex = 50;
@@ -616,12 +635,114 @@
             this.button_price_add.UseVisualStyleBackColor = false;
             this.button_price_add.Click += new System.EventHandler(this.button_price_add_Click);
             // 
+            // dataGridView_classes
+            // 
+            this.dataGridView_classes.AutoGenerateColumns = false;
+            this.dataGridView_classes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_classes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn2,
+            this.nameDataGridViewTextBoxColumn1});
+            this.dataGridView_classes.DataSource = this.classesBindingSource;
+            this.dataGridView_classes.Location = new System.Drawing.Point(1268, 205);
+            this.dataGridView_classes.Name = "dataGridView_classes";
+            this.dataGridView_classes.Size = new System.Drawing.Size(247, 26);
+            this.dataGridView_classes.TabIndex = 54;
+            this.dataGridView_classes.Visible = false;
+            // 
+            // classesBindingSource
+            // 
+            this.classesBindingSource.DataMember = "Classes";
+            this.classesBindingSource.DataSource = this.airportDataSet;
+            // 
+            // classesTableAdapter
+            // 
+            this.classesTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            // 
+            // dataGridView_departures
+            // 
+            this.dataGridView_departures.AutoGenerateColumns = false;
+            this.dataGridView_departures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_departures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn3,
+            this.iDAircraftDataGridViewTextBoxColumn,
+            this.iDFlightDataGridViewTextBoxColumn,
+            this.iDPilotDataGridViewTextBoxColumn,
+            this.departureTimeDataGridViewTextBoxColumn,
+            this.arrivalTimeDataGridViewTextBoxColumn});
+            this.dataGridView_departures.DataSource = this.departuresBindingSource;
+            this.dataGridView_departures.Location = new System.Drawing.Point(1268, 237);
+            this.dataGridView_departures.Name = "dataGridView_departures";
+            this.dataGridView_departures.Size = new System.Drawing.Size(247, 34);
+            this.dataGridView_departures.TabIndex = 55;
+            this.dataGridView_departures.Visible = false;
+            // 
+            // departuresBindingSource
+            // 
+            this.departuresBindingSource.DataMember = "Departures";
+            this.departuresBindingSource.DataSource = this.airportDataSet;
+            // 
+            // departuresTableAdapter
+            // 
+            this.departuresTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn3
+            // 
+            this.iDDataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn3.Name = "iDDataGridViewTextBoxColumn3";
+            this.iDDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // iDAircraftDataGridViewTextBoxColumn
+            // 
+            this.iDAircraftDataGridViewTextBoxColumn.DataPropertyName = "ID_Aircraft";
+            this.iDAircraftDataGridViewTextBoxColumn.HeaderText = "ID_Aircraft";
+            this.iDAircraftDataGridViewTextBoxColumn.Name = "iDAircraftDataGridViewTextBoxColumn";
+            // 
+            // iDFlightDataGridViewTextBoxColumn
+            // 
+            this.iDFlightDataGridViewTextBoxColumn.DataPropertyName = "ID_Flight";
+            this.iDFlightDataGridViewTextBoxColumn.HeaderText = "ID_Flight";
+            this.iDFlightDataGridViewTextBoxColumn.Name = "iDFlightDataGridViewTextBoxColumn";
+            // 
+            // iDPilotDataGridViewTextBoxColumn
+            // 
+            this.iDPilotDataGridViewTextBoxColumn.DataPropertyName = "ID_Pilot";
+            this.iDPilotDataGridViewTextBoxColumn.HeaderText = "ID_Pilot";
+            this.iDPilotDataGridViewTextBoxColumn.Name = "iDPilotDataGridViewTextBoxColumn";
+            // 
+            // departureTimeDataGridViewTextBoxColumn
+            // 
+            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartureTime";
+            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "DepartureTime";
+            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
+            // 
+            // arrivalTimeDataGridViewTextBoxColumn
+            // 
+            this.arrivalTimeDataGridViewTextBoxColumn.DataPropertyName = "ArrivalTime";
+            this.arrivalTimeDataGridViewTextBoxColumn.HeaderText = "ArrivalTime";
+            this.arrivalTimeDataGridViewTextBoxColumn.Name = "arrivalTimeDataGridViewTextBoxColumn";
+            // 
             // Form_Clients_Tickets_Prices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1538, 585);
+            this.Controls.Add(this.dataGridView_departures);
+            this.Controls.Add(this.dataGridView_classes);
             this.Controls.Add(this.button_price_delete);
             this.Controls.Add(this.button_price_change);
             this.Controls.Add(this.button_price_add);
@@ -671,6 +792,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_prices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pricesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_classes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_departures)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departuresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -737,5 +862,19 @@
         private System.Windows.Forms.Button button_price_delete;
         private System.Windows.Forms.Button button_price_change;
         private System.Windows.Forms.Button button_price_add;
+        private System.Windows.Forms.DataGridView dataGridView_classes;
+        private System.Windows.Forms.BindingSource classesBindingSource;
+        private AirportDataSetTableAdapters.ClassesTableAdapter classesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridView_departures;
+        private System.Windows.Forms.BindingSource departuresBindingSource;
+        private AirportDataSetTableAdapters.DeparturesTableAdapter departuresTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDAircraftDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDFlightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDPilotDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrivalTimeDataGridViewTextBoxColumn;
     }
 }
