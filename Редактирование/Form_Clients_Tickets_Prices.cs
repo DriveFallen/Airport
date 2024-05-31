@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Airport.Редактирование
 {
-    public partial class Form_Clients : Form
+    public partial class Form_Clients_Tickets_Prices : Form
     {
         public SqlConnection connection;
 
-        public Form_Clients()
+        public Form_Clients_Tickets_Prices()
         {
             InitializeComponent();
             string connectionString = @"Data Source=WIN-GOSD7FOPDHE\SQLEXPRESS;Initial Catalog=Airport;Integrated Security=True";
@@ -26,10 +26,38 @@ namespace Airport.Редактирование
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Clients". При необходимости она может быть перемещена или удалена.
             this.clientsTableAdapter.Fill(this.airportDataSet.Clients);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Prices". При необходимости она может быть перемещена или удалена.
+            this.pricesTableAdapter.Fill(this.airportDataSet.Prices);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Tickets". При необходимости она может быть перемещена или удалена.
+            this.ticketsTableAdapter.Fill(this.airportDataSet.Tickets);
+
+            comboBox_ticket_price.Items.Clear();
+            comboBox_ticket_client.Items.Clear();
+            comboBox_price_class.Items.Clear();
+            comboBox_price_departure.Items.Clear();
+
+            foreach (DataGridViewRow row in dataGridView_prices.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string cellValue = row.Cells[1].Value.ToString() + " " + row.Cells[2].Value.ToString();
+                    comboBox_ticket_client.Items.Add(cellValue);
+                }
+            }
+
+            foreach (DataGridViewRow row in dataGridView_clients.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string cellValue = row.Cells[3].Value.ToString();
+                    comboBox_ticket_client.Items.Add(cellValue);
+                }
+            }
         }
         
         private void Form_Clients_Tickets_Prices_Load(object sender, EventArgs e)
         {
+
             UpdateWindowInformation();
         }
 
@@ -174,6 +202,32 @@ namespace Airport.Редактирование
                 connection.Close();
                 UpdateWindowInformation();
             }
+        }
+
+        private void button_ticket_add_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button_ticket_delete_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button_ticket_change_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_price_add_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button_price_change_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void button_price_delete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

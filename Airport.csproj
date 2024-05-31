@@ -71,11 +71,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Редактирование\Form_Clients.cs">
+    <Compile Include="Редактирование\Form_Airports_Routes_Flights.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Редактирование\Form_Clients.Designer.cs">
-      <DependentUpon>Form_Clients.cs</DependentUpon>
+    <Compile Include="Редактирование\Form_Airports_Routes_Flights.Designer.cs">
+      <DependentUpon>Form_Airports_Routes_Flights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Редактирование\Form_Classes_NumberOfSeats_Aircrafts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Редактирование\Form_Classes_NumberOfSeats_Aircrafts.Designer.cs">
+      <DependentUpon>Form_Classes_NumberOfSeats_Aircrafts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Редактирование\Form_Clients_Tickets_Prices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Редактирование\Form_Clients_Tickets_Prices.Designer.cs">
+      <DependentUpon>Form_Clients_Tickets_Prices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Редактирование\Form_Departures_Pilots.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Редактирование\Form_Departures_Pilots.Designer.cs">
+      <DependentUpon>Form_Departures_Pilots.cs</DependentUpon>
     </Compile>
     <Compile Include="Редактирование\Form_Users.cs">
       <SubType>Form</SubType>
@@ -101,8 +119,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Редактирование\Form_Clients.resx">
-      <DependentUpon>Form_Clients.cs</DependentUpon>
+    <EmbeddedResource Include="Редактирование\Form_Airports_Routes_Flights.resx">
+      <DependentUpon>Form_Airports_Routes_Flights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Редактирование\Form_Classes_NumberOfSeats_Aircrafts.resx">
+      <DependentUpon>Form_Classes_NumberOfSeats_Aircrafts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Редактирование\Form_Clients_Tickets_Prices.resx">
+      <DependentUpon>Form_Clients_Tickets_Prices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Редактирование\Form_Departures_Pilots.resx">
+      <DependentUpon>Form_Departures_Pilots.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Редактирование\Form_Users.resx">
       <DependentUpon>Form_Users.cs</DependentUpon>
