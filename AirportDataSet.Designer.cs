@@ -3810,8 +3810,6 @@ namespace Airport {
             
             private global::System.Data.DataColumn columnSeat;
             
-            private global::System.Data.DataColumn columnNewPrice;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TicketsDataTable() {
@@ -3879,14 +3877,6 @@ namespace Airport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NewPriceColumn {
-                get {
-                    return this.columnNewPrice;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3922,14 +3912,13 @@ namespace Airport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TicketsRow AddTicketsRow(PricesRow parentPricesRowByFK_Tickets_Prices, ClientsRow parentClientsRowByFK_Tickets_Clients, string Seat, decimal NewPrice) {
+            public TicketsRow AddTicketsRow(PricesRow parentPricesRowByFK_Tickets_Prices, ClientsRow parentClientsRowByFK_Tickets_Clients, string Seat) {
                 TicketsRow rowTicketsRow = ((TicketsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
-                        Seat,
-                        NewPrice};
+                        Seat};
                 if ((parentPricesRowByFK_Tickets_Prices != null)) {
                     columnValuesArray[1] = parentPricesRowByFK_Tickets_Prices[0];
                 }
@@ -3969,7 +3958,6 @@ namespace Airport {
                 this.columnID_Price = base.Columns["ID_Price"];
                 this.columnID_Client = base.Columns["ID_Client"];
                 this.columnSeat = base.Columns["Seat"];
-                this.columnNewPrice = base.Columns["NewPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3983,8 +3971,6 @@ namespace Airport {
                 base.Columns.Add(this.columnID_Client);
                 this.columnSeat = new global::System.Data.DataColumn("Seat", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSeat);
-                this.columnNewPrice = new global::System.Data.DataColumn("NewPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNewPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -3997,7 +3983,6 @@ namespace Airport {
                 this.columnID_Client.AllowDBNull = false;
                 this.columnSeat.AllowDBNull = false;
                 this.columnSeat.MaxLength = 50;
-                this.columnNewPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5565,17 +5550,6 @@ namespace Airport {
                 }
                 set {
                     this[this.tableTickets.SeatColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal NewPrice {
-                get {
-                    return ((decimal)(this[this.tableTickets.NewPriceColumn]));
-                }
-                set {
-                    this[this.tableTickets.NewPriceColumn] = value;
                 }
             }
             
@@ -9901,43 +9875,37 @@ SELECT ID, ID_Airport, Direction FROM Routes WHERE (ID = @ID)";
             tableMapping.ColumnMappings.Add("ID_Price", "ID_Price");
             tableMapping.ColumnMappings.Add("ID_Client", "ID_Client");
             tableMapping.ColumnMappings.Add("Seat", "Seat");
-            tableMapping.ColumnMappings.Add("NewPrice", "NewPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Tickets] WHERE (([ID] = @Original_ID) AND ([ID_Price] = @Origi" +
-                "nal_ID_Price) AND ([ID_Client] = @Original_ID_Client) AND ([Seat] = @Original_Se" +
-                "at) AND ([NewPrice] = @Original_NewPrice))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Tickets] WHERE (([ID] = @Original_ID) AND ([ID_Price] = @Original_ID" +
+                "_Price) AND ([ID_Client] = @Original_ID_Client) AND ([Seat] = @Original_Seat))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Client", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seat", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Tickets] ([ID_Price], [ID_Client], [Seat], [NewPrice]) VALUES " +
-                "(@ID_Price, @ID_Client, @Seat, @NewPrice);\r\nSELECT ID, ID_Price, ID_Client, Seat" +
-                ", NewPrice FROM Tickets WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Tickets] ([ID_Price], [ID_Client], [Seat]) VALUES (@ID_Price, @ID_Cl" +
+                "ient, @Seat);\r\nSELECT ID, ID_Price, ID_Client, Seat FROM Tickets WHERE (ID = SCO" +
+                "PE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seat", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Tickets] SET [ID_Price] = @ID_Price, [ID_Client] = @ID_Client, [Seat] = @Seat, [NewPrice] = @NewPrice WHERE (([ID] = @Original_ID) AND ([ID_Price] = @Original_ID_Price) AND ([ID_Client] = @Original_ID_Client) AND ([Seat] = @Original_Seat) AND ([NewPrice] = @Original_NewPrice));
-SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM Tickets WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Tickets] SET [ID_Price] = @ID_Price, [ID_Client] = @ID_Client, [Seat] = @Seat WHERE (([ID] = @Original_ID) AND ([ID_Price] = @Original_ID_Price) AND ([ID_Client] = @Original_ID_Client) AND ([Seat] = @Original_Seat));
+SELECT ID, ID_Price, ID_Client, Seat FROM Tickets WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seat", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NewPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Client", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seat", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NewPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NewPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -9954,7 +9922,7 @@ SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM Tickets WHERE (ID = @ID)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM dbo.Tickets";
+            this._commandCollection[0].CommandText = "SELECT ID, ID_Price, ID_Client, Seat FROM Tickets";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10015,7 +9983,7 @@ SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM Tickets WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, int Original_ID_Price, int Original_ID_Client, string Original_Seat, decimal Original_NewPrice) {
+        public virtual int Delete(int Original_ID, int Original_ID_Price, int Original_ID_Client, string Original_Seat) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ID_Price));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ID_Client));
@@ -10025,7 +9993,6 @@ SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM Tickets WHERE (ID = @ID)";
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Seat));
             }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_NewPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10046,7 +10013,7 @@ SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM Tickets WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Price, int ID_Client, string Seat, decimal NewPrice) {
+        public virtual int Insert(int ID_Price, int ID_Client, string Seat) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Price));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ID_Client));
             if ((Seat == null)) {
@@ -10055,7 +10022,6 @@ SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM Tickets WHERE (ID = @ID)";
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Seat));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(NewPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10076,7 +10042,7 @@ SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM Tickets WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Price, int ID_Client, string Seat, decimal NewPrice, int Original_ID, int Original_ID_Price, int Original_ID_Client, string Original_Seat, decimal Original_NewPrice, int ID) {
+        public virtual int Update(int ID_Price, int ID_Client, string Seat, int Original_ID, int Original_ID_Price, int Original_ID_Client, string Original_Seat, int ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Price));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID_Client));
             if ((Seat == null)) {
@@ -10085,18 +10051,16 @@ SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM Tickets WHERE (ID = @ID)";
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Seat));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(NewPrice));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_Price));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_Client));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID_Price));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ID_Client));
             if ((Original_Seat == null)) {
                 throw new global::System.ArgumentNullException("Original_Seat");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Seat));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Seat));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_NewPrice));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10117,8 +10081,8 @@ SELECT ID, ID_Price, ID_Client, Seat, NewPrice FROM Tickets WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID_Price, int ID_Client, string Seat, decimal NewPrice, int Original_ID, int Original_ID_Price, int Original_ID_Client, string Original_Seat, decimal Original_NewPrice) {
-            return this.Update(ID_Price, ID_Client, Seat, NewPrice, Original_ID, Original_ID_Price, Original_ID_Client, Original_Seat, Original_NewPrice, Original_ID);
+        public virtual int Update(int ID_Price, int ID_Client, string Seat, int Original_ID, int Original_ID_Price, int Original_ID_Client, string Original_Seat) {
+            return this.Update(ID_Price, ID_Client, Seat, Original_ID, Original_ID_Price, Original_ID_Client, Original_Seat, Original_ID);
         }
     }
     

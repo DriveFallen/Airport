@@ -76,6 +76,7 @@ namespace Airport.Редактирование
         
         private void Form_Clients_Tickets_Prices_Load(object sender, EventArgs e)
         {
+
             UpdateWindowInformation();
         }
 
@@ -235,7 +236,6 @@ namespace Airport.Редактирование
             SqlParameter price = new SqlParameter("@price", comboBox_ticket_price.Text);
             SqlParameter client = new SqlParameter("@client", comboBox_ticket_client.Text);
             SqlParameter seat = new SqlParameter("@seat", textBox_ticket_seat.Text);
-            SqlParameter newPrice = new SqlParameter("@newPrice", textBox_ticket_price.Text);
 
             try
             {
@@ -247,9 +247,8 @@ namespace Airport.Редактирование
                 Add_query.Parameters.Add(price);
                 Add_query.Parameters.Add(client);
                 Add_query.Parameters.Add(seat);
-                Add_query.Parameters.Add(newPrice);
 
-                if (comboBox_ticket_price.Text != null || comboBox_ticket_client.Text != null || textBox_ticket_seat != null || textBox_ticket_price.Text != null) // проверка на незаполненые поля
+                if (comboBox_ticket_price.Text != null || comboBox_ticket_client.Text != null || textBox_ticket_seat != null) // проверка на незаполненые поля
                 {
                     if (Convert.ToInt32(Proverka_query.ExecuteScalar()) == 0)
                     {
@@ -288,7 +287,6 @@ namespace Airport.Редактирование
             SqlParameter price = new SqlParameter("@price", comboBox_ticket_price.Text);
             SqlParameter client = new SqlParameter("@client", comboBox_ticket_client.Text);
             SqlParameter seat = new SqlParameter("@seat", textBox_ticket_seat.Text);
-            SqlParameter newPrice = new SqlParameter("@newPrice", textBox_ticket_price.Text);
 
             try
             {
@@ -299,9 +297,8 @@ namespace Airport.Редактирование
                 Change_query.Parameters.Add(price);
                 Change_query.Parameters.Add(client);
                 Change_query.Parameters.Add(seat);
-                Change_query.Parameters.Add(newPrice);
 
-                if (textBox_ticket_id.Text != null || comboBox_ticket_price.Text != null || comboBox_ticket_client.Text != null || textBox_ticket_seat.Text != null || textBox_ticket_seat.Text != null || textBox_ticket_price.Text != null) // проверка на незаполненые поля
+                if (textBox_ticket_id.Text != null || comboBox_ticket_price.Text != null || comboBox_ticket_client.Text != null || textBox_ticket_seat.Text != null || textBox_ticket_seat.Text != null) // проверка на незаполненые поля
                 {
                     if (Convert.ToInt32(Proverka_query.ExecuteScalar()) > 0)
                     {

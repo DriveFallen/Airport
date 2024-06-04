@@ -31,6 +31,7 @@
             this.textBox_login = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.button_sign = new System.Windows.Forms.Button();
+            this.label2_name_form = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_login
@@ -60,12 +61,24 @@
             this.button_sign.UseVisualStyleBackColor = true;
             this.button_sign.Click += new System.EventHandler(this.button_sign_Click);
             // 
+            // label2_name_form
+            // 
+            this.label2_name_form.AutoSize = true;
+            this.label2_name_form.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2_name_form.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2_name_form.Location = new System.Drawing.Point(261, 55);
+            this.label2_name_form.Name = "label2_name_form";
+            this.label2_name_form.Size = new System.Drawing.Size(132, 18);
+            this.label2_name_form.TabIndex = 4;
+            this.label2_name_form.Text = "АВТОРИЗАЦИЯ";
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(633, 383);
+            this.Controls.Add(this.label2_name_form);
             this.Controls.Add(this.button_sign);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_login);
@@ -82,6 +95,7 @@
         private System.Windows.Forms.TextBox textBox_login;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button_sign;
+        private System.Windows.Forms.Label label2_name_form;
     }
 }
 

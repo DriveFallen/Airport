@@ -19,6 +19,10 @@ namespace Airport.Редактирование
 
         private void Form_Departures_Pilots_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Pilots". При необходимости она может быть перемещена или удалена.
+            this.pilotsTableAdapter.Fill(this.airportDataSet.Pilots);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Departures". При необходимости она может быть перемещена или удалена.
+            this.departuresTableAdapter.Fill(this.airportDataSet.Departures);
 
         }
     }

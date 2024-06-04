@@ -561,7 +561,6 @@
             this.Controls.Add(this.button_classes_numberOfSeats_aircrafts);
             this.Controls.Add(this.button_airports_routes_flights);
             this.Controls.Add(this.button_clients_tickets_prices);
-            this.Name = "Form_Admin";
             this.Text = "Form_Admin";
             this.Load += new System.EventHandler(this.Form_Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_users)).EndInit();
