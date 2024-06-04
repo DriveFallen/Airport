@@ -18,7 +18,11 @@ namespace Airport
 
         private void button_clients_tickets_prices_Click(object sender, EventArgs e)
         {
-
+            panel1.Visible = !panel1.Visible;
+            panel2.Hide();
+            panel3.Hide();
+            panel4.Hide();
+            panel5.Hide();
         }
         private void button_first_change_Click(object sender, EventArgs e)
         {
@@ -29,7 +33,11 @@ namespace Airport
 
         private void button_airports_routes_flights_Click(object sender, EventArgs e)
         {
-
+            panel1.Hide();
+            panel2.Visible = !panel2.Visible;
+            panel3.Hide();
+            panel4.Hide();
+            panel5.Hide();
         }
         private void button_second_change_Click(object sender, EventArgs e)
         {
@@ -40,7 +48,11 @@ namespace Airport
 
         private void button_classes_numberOfSeats_aircrafts_Click(object sender, EventArgs e)
         {
-
+            panel1.Hide();
+            panel2.Hide();
+            panel3.Visible = !panel3.Visible;
+            panel4.Hide();
+            panel5.Hide();
         }
         private void button_third_change_Click(object sender, EventArgs e)
         {
@@ -51,7 +63,11 @@ namespace Airport
 
         private void button_departures_pilots_Click(object sender, EventArgs e)
         {
-
+            panel1.Hide();
+            panel2.Hide();
+            panel3.Hide();
+            panel4.Visible = !panel4.Visible;
+            panel5.Hide();
         }
         private void button_four_change_Click(object sender, EventArgs e)
         {
@@ -62,7 +78,11 @@ namespace Airport
 
         private void button_users_Click(object sender, EventArgs e)
         {
-
+            panel1.Hide();
+            panel2.Hide();
+            panel3.Hide();
+            panel4.Hide();
+            panel5.Visible = !panel5.Visible;
         }
         private void button_fifth_change_Click(object sender, EventArgs e)
         {

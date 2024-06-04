@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView_clients = new System.Windows.Forms.DataGridView();
             this.button_delete_client = new System.Windows.Forms.Button();
             this.button_change_client = new System.Windows.Forms.Button();
@@ -68,60 +67,16 @@
             this.button_price_add = new System.Windows.Forms.Button();
             this.dataGridView_classes = new System.Windows.Forms.DataGridView();
             this.dataGridView_departures = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDAircraftDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDPilotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrivalTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departuresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.airportDataSet = new Airport.AirportDataSet();
-            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDClassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDepartureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pricesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientsTableAdapter = new Airport.AirportDataSetTableAdapters.ClientsTableAdapter();
-            this.pricesTableAdapter = new Airport.AirportDataSetTableAdapters.PricesTableAdapter();
-            this.classesTableAdapter = new Airport.AirportDataSetTableAdapters.ClassesTableAdapter();
-            this.departuresTableAdapter = new Airport.AirportDataSetTableAdapters.DeparturesTableAdapter();
-            this.ticketsTableAdapter = new Airport.AirportDataSetTableAdapters.TicketsTableAdapter();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_clients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_tickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_prices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_classes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_departures)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departuresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pricesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_clients
             // 
-            this.dataGridView_clients.AutoGenerateColumns = false;
             this.dataGridView_clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_clients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn,
-            this.passportDataGridViewTextBoxColumn});
-            this.dataGridView_clients.DataSource = this.clientsBindingSource;
             this.dataGridView_clients.Location = new System.Drawing.Point(16, 277);
             this.dataGridView_clients.Name = "dataGridView_clients";
             this.dataGridView_clients.Size = new System.Drawing.Size(478, 296);
@@ -438,14 +393,7 @@
             // 
             // dataGridView_tickets
             // 
-            this.dataGridView_tickets.AutoGenerateColumns = false;
             this.dataGridView_tickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_tickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.ID_Price,
-            this.ID_Client,
-            this.Seat});
-            this.dataGridView_tickets.DataSource = this.ticketsBindingSource;
             this.dataGridView_tickets.Location = new System.Drawing.Point(500, 277);
             this.dataGridView_tickets.Name = "dataGridView_tickets";
             this.dataGridView_tickets.Size = new System.Drawing.Size(531, 296);
@@ -453,14 +401,7 @@
             // 
             // dataGridView_prices
             // 
-            this.dataGridView_prices.AutoGenerateColumns = false;
             this.dataGridView_prices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_prices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn1,
-            this.iDClassDataGridViewTextBoxColumn,
-            this.iDDepartureDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
-            this.dataGridView_prices.DataSource = this.pricesBindingSource;
             this.dataGridView_prices.Location = new System.Drawing.Point(1037, 277);
             this.dataGridView_prices.Name = "dataGridView_prices";
             this.dataGridView_prices.Size = new System.Drawing.Size(478, 296);
@@ -501,12 +442,7 @@
             // 
             // dataGridView_classes
             // 
-            this.dataGridView_classes.AutoGenerateColumns = false;
             this.dataGridView_classes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_classes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn2,
-            this.nameDataGridViewTextBoxColumn1});
-            this.dataGridView_classes.DataSource = this.classesBindingSource;
             this.dataGridView_classes.Location = new System.Drawing.Point(1268, 205);
             this.dataGridView_classes.Name = "dataGridView_classes";
             this.dataGridView_classes.Size = new System.Drawing.Size(247, 26);
@@ -515,196 +451,12 @@
             // 
             // dataGridView_departures
             // 
-            this.dataGridView_departures.AutoGenerateColumns = false;
             this.dataGridView_departures.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_departures.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn3,
-            this.iDAircraftDataGridViewTextBoxColumn,
-            this.iDFlightDataGridViewTextBoxColumn,
-            this.iDPilotDataGridViewTextBoxColumn,
-            this.departureTimeDataGridViewTextBoxColumn,
-            this.arrivalTimeDataGridViewTextBoxColumn});
-            this.dataGridView_departures.DataSource = this.departuresBindingSource;
             this.dataGridView_departures.Location = new System.Drawing.Point(1268, 237);
             this.dataGridView_departures.Name = "dataGridView_departures";
             this.dataGridView_departures.Size = new System.Drawing.Size(247, 34);
             this.dataGridView_departures.TabIndex = 55;
             this.dataGridView_departures.Visible = false;
-            // 
-            // iDDataGridViewTextBoxColumn3
-            // 
-            this.iDDataGridViewTextBoxColumn3.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn3.Name = "iDDataGridViewTextBoxColumn3";
-            this.iDDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // iDAircraftDataGridViewTextBoxColumn
-            // 
-            this.iDAircraftDataGridViewTextBoxColumn.DataPropertyName = "ID_Aircraft";
-            this.iDAircraftDataGridViewTextBoxColumn.HeaderText = "ID_Aircraft";
-            this.iDAircraftDataGridViewTextBoxColumn.Name = "iDAircraftDataGridViewTextBoxColumn";
-            // 
-            // iDFlightDataGridViewTextBoxColumn
-            // 
-            this.iDFlightDataGridViewTextBoxColumn.DataPropertyName = "ID_Flight";
-            this.iDFlightDataGridViewTextBoxColumn.HeaderText = "ID_Flight";
-            this.iDFlightDataGridViewTextBoxColumn.Name = "iDFlightDataGridViewTextBoxColumn";
-            // 
-            // iDPilotDataGridViewTextBoxColumn
-            // 
-            this.iDPilotDataGridViewTextBoxColumn.DataPropertyName = "ID_Pilot";
-            this.iDPilotDataGridViewTextBoxColumn.HeaderText = "ID_Pilot";
-            this.iDPilotDataGridViewTextBoxColumn.Name = "iDPilotDataGridViewTextBoxColumn";
-            // 
-            // departureTimeDataGridViewTextBoxColumn
-            // 
-            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartureTime";
-            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "DepartureTime";
-            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
-            // 
-            // arrivalTimeDataGridViewTextBoxColumn
-            // 
-            this.arrivalTimeDataGridViewTextBoxColumn.DataPropertyName = "ArrivalTime";
-            this.arrivalTimeDataGridViewTextBoxColumn.HeaderText = "ArrivalTime";
-            this.arrivalTimeDataGridViewTextBoxColumn.Name = "arrivalTimeDataGridViewTextBoxColumn";
-            // 
-            // departuresBindingSource
-            // 
-            this.departuresBindingSource.DataMember = "Departures";
-            this.departuresBindingSource.DataSource = this.airportDataSet;
-            // 
-            // airportDataSet
-            // 
-            this.airportDataSet.DataSetName = "AirportDataSet";
-            this.airportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // iDDataGridViewTextBoxColumn2
-            // 
-            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
-            this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            // 
-            // classesBindingSource
-            // 
-            this.classesBindingSource.DataMember = "Classes";
-            this.classesBindingSource.DataSource = this.airportDataSet;
-            // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // iDClassDataGridViewTextBoxColumn
-            // 
-            this.iDClassDataGridViewTextBoxColumn.DataPropertyName = "ID_Class";
-            this.iDClassDataGridViewTextBoxColumn.HeaderText = "ID_Class";
-            this.iDClassDataGridViewTextBoxColumn.Name = "iDClassDataGridViewTextBoxColumn";
-            // 
-            // iDDepartureDataGridViewTextBoxColumn
-            // 
-            this.iDDepartureDataGridViewTextBoxColumn.DataPropertyName = "ID_Departure";
-            this.iDDepartureDataGridViewTextBoxColumn.HeaderText = "ID_Departure";
-            this.iDDepartureDataGridViewTextBoxColumn.Name = "iDDepartureDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // pricesBindingSource
-            // 
-            this.pricesBindingSource.DataMember = "Prices";
-            this.pricesBindingSource.DataSource = this.airportDataSet;
-            // 
-            // ticketsBindingSource
-            // 
-            this.ticketsBindingSource.DataMember = "Tickets";
-            this.ticketsBindingSource.DataSource = this.airportDataSet;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            // 
-            // passportDataGridViewTextBoxColumn
-            // 
-            this.passportDataGridViewTextBoxColumn.DataPropertyName = "Passport";
-            this.passportDataGridViewTextBoxColumn.HeaderText = "Passport";
-            this.passportDataGridViewTextBoxColumn.Name = "passportDataGridViewTextBoxColumn";
-            // 
-            // clientsBindingSource
-            // 
-            this.clientsBindingSource.DataMember = "Clients";
-            this.clientsBindingSource.DataSource = this.airportDataSet;
-            // 
-            // clientsTableAdapter
-            // 
-            this.clientsTableAdapter.ClearBeforeFill = true;
-            // 
-            // pricesTableAdapter
-            // 
-            this.pricesTableAdapter.ClearBeforeFill = true;
-            // 
-            // classesTableAdapter
-            // 
-            this.classesTableAdapter.ClearBeforeFill = true;
-            // 
-            // departuresTableAdapter
-            // 
-            this.departuresTableAdapter.ClearBeforeFill = true;
-            // 
-            // ticketsTableAdapter
-            // 
-            this.ticketsTableAdapter.ClearBeforeFill = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // ID_Price
-            // 
-            this.ID_Price.DataPropertyName = "ID_Price";
-            this.ID_Price.HeaderText = "ID_Price";
-            this.ID_Price.Name = "ID_Price";
-            // 
-            // ID_Client
-            // 
-            this.ID_Client.DataPropertyName = "ID_Client";
-            this.ID_Client.HeaderText = "ID_Client";
-            this.ID_Client.Name = "ID_Client";
-            // 
-            // Seat
-            // 
-            this.Seat.DataPropertyName = "Seat";
-            this.Seat.HeaderText = "Seat";
-            this.Seat.Name = "Seat";
             // 
             // Form_Clients_Tickets_Prices
             // 
@@ -759,12 +511,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_prices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_classes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_departures)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departuresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pricesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -786,7 +532,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_ID_client;
         private AirportDataSet airportDataSet;
-        private System.Windows.Forms.BindingSource clientsBindingSource;
         private AirportDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -813,7 +558,6 @@
         private System.Windows.Forms.TextBox textBox_price_id;
         private System.Windows.Forms.DataGridView dataGridView_tickets;
         private System.Windows.Forms.DataGridView dataGridView_prices;
-        private System.Windows.Forms.BindingSource pricesBindingSource;
         private AirportDataSetTableAdapters.PricesTableAdapter pricesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDClassDataGridViewTextBoxColumn;
@@ -823,12 +567,10 @@
         private System.Windows.Forms.Button button_price_change;
         private System.Windows.Forms.Button button_price_add;
         private System.Windows.Forms.DataGridView dataGridView_classes;
-        private System.Windows.Forms.BindingSource classesBindingSource;
         private AirportDataSetTableAdapters.ClassesTableAdapter classesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridView dataGridView_departures;
-        private System.Windows.Forms.BindingSource departuresBindingSource;
         private AirportDataSetTableAdapters.DeparturesTableAdapter departuresTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDAircraftDataGridViewTextBoxColumn;
@@ -836,12 +578,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDPilotDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn arrivalTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource ticketsBindingSource;
         private AirportDataSetTableAdapters.TicketsTableAdapter ticketsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn newPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Client;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Seat;
     }
 }

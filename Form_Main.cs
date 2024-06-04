@@ -34,9 +34,6 @@ namespace Airport
             this.pricesTableAdapter.Fill(this.airportDataSet.Prices);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Tickets". При необходимости она может быть перемещена или удалена.
             this.ticketsTableAdapter.Fill(this.airportDataSet.Tickets);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Clients". При необходимости она может быть перемещена или удалена.
-            this.clientsTableAdapter.FillByCustom(this.airportDataSet.Clients);
-
         }
 
         private void button_clients_tickets_prices_Click(object sender, EventArgs e)
