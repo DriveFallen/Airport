@@ -32,15 +32,15 @@
             this.dataGridView_airports = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.airportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.airportDataSet = new Airport.AirportDataSet();
-            this.button_delete_client = new System.Windows.Forms.Button();
-            this.button_change_client = new System.Windows.Forms.Button();
-            this.button_add_client = new System.Windows.Forms.Button();
+            this.button_delete_airport = new System.Windows.Forms.Button();
+            this.button_change_airport = new System.Windows.Forms.Button();
+            this.button_add_airport = new System.Windows.Forms.Button();
             this.button_back = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_airports_country = new System.Windows.Forms.TextBox();
+            this.textBox_airports_city = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_airports_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,8 +63,6 @@
             this.button_route_delete = new System.Windows.Forms.Button();
             this.button_route_change = new System.Windows.Forms.Button();
             this.button_route_add = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox_route_direction = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_route_id = new System.Windows.Forms.TextBox();
@@ -74,14 +72,15 @@
             this.button_flights_change = new System.Windows.Forms.Button();
             this.button_flights_add = new System.Windows.Forms.Button();
             this.label7_departure_time = new System.Windows.Forms.Label();
-            this.textBox_flight_departure_time = new System.Windows.Forms.TextBox();
             this.label8_id_route = new System.Windows.Forms.Label();
             this.label9_id_flight = new System.Windows.Forms.Label();
             this.textBox_flight_id = new System.Windows.Forms.TextBox();
-            this.textBox_flight_arrival_time = new System.Windows.Forms.TextBox();
             this.label8_arrival_time = new System.Windows.Forms.Label();
             this.label9_weekday = new System.Windows.Forms.Label();
-            this.textBox_fligh_weekday = new System.Windows.Forms.TextBox();
+            this.checkBox_route = new System.Windows.Forms.CheckBox();
+            this.dateTimePicker_flight_departure = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_flight_arrival = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_flights_weekdays = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_airports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airportDataSet)).BeginInit();
@@ -98,7 +97,7 @@
             this.dataGridView_airports.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.countryDataGridViewTextBoxColumn});
+            this.City});
             this.dataGridView_airports.DataSource = this.airportsBindingSource;
             this.dataGridView_airports.Location = new System.Drawing.Point(16, 357);
             this.dataGridView_airports.Name = "dataGridView_airports";
@@ -118,11 +117,11 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // countryDataGridViewTextBoxColumn
+            // City
             // 
-            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
-            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
-            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            this.City.DataPropertyName = "City";
+            this.City.HeaderText = "City";
+            this.City.Name = "City";
             // 
             // airportsBindingSource
             // 
@@ -134,38 +133,38 @@
             this.airportDataSet.DataSetName = "AirportDataSet";
             this.airportDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button_delete_client
+            // button_delete_airport
             // 
-            this.button_delete_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_delete_client.Location = new System.Drawing.Point(232, 129);
-            this.button_delete_client.Name = "button_delete_client";
-            this.button_delete_client.Size = new System.Drawing.Size(97, 29);
-            this.button_delete_client.TabIndex = 37;
-            this.button_delete_client.Text = "button3";
-            this.button_delete_client.UseVisualStyleBackColor = false;
-            this.button_delete_client.Click += new System.EventHandler(this.button_delete_client_Click);
+            this.button_delete_airport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_delete_airport.Location = new System.Drawing.Point(232, 129);
+            this.button_delete_airport.Name = "button_delete_airport";
+            this.button_delete_airport.Size = new System.Drawing.Size(97, 29);
+            this.button_delete_airport.TabIndex = 37;
+            this.button_delete_airport.Text = "button3";
+            this.button_delete_airport.UseVisualStyleBackColor = false;
+            this.button_delete_airport.Click += new System.EventHandler(this.button_delete_airport_Click);
             // 
-            // button_change_client
+            // button_change_airport
             // 
-            this.button_change_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_change_client.Location = new System.Drawing.Point(232, 94);
-            this.button_change_client.Name = "button_change_client";
-            this.button_change_client.Size = new System.Drawing.Size(97, 29);
-            this.button_change_client.TabIndex = 36;
-            this.button_change_client.Text = "button2";
-            this.button_change_client.UseVisualStyleBackColor = false;
-            this.button_change_client.Click += new System.EventHandler(this.button_change_client_Click);
+            this.button_change_airport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_change_airport.Location = new System.Drawing.Point(232, 94);
+            this.button_change_airport.Name = "button_change_airport";
+            this.button_change_airport.Size = new System.Drawing.Size(97, 29);
+            this.button_change_airport.TabIndex = 36;
+            this.button_change_airport.Text = "button2";
+            this.button_change_airport.UseVisualStyleBackColor = false;
+            this.button_change_airport.Click += new System.EventHandler(this.button_change_airport_Click);
             // 
-            // button_add_client
+            // button_add_airport
             // 
-            this.button_add_client.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_add_client.Location = new System.Drawing.Point(232, 59);
-            this.button_add_client.Name = "button_add_client";
-            this.button_add_client.Size = new System.Drawing.Size(97, 29);
-            this.button_add_client.TabIndex = 35;
-            this.button_add_client.Text = "button1";
-            this.button_add_client.UseVisualStyleBackColor = false;
-            this.button_add_client.Click += new System.EventHandler(this.button_add_client_Click);
+            this.button_add_airport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button_add_airport.Location = new System.Drawing.Point(232, 59);
+            this.button_add_airport.Name = "button_add_airport";
+            this.button_add_airport.Size = new System.Drawing.Size(97, 29);
+            this.button_add_airport.TabIndex = 35;
+            this.button_add_airport.Text = "button1";
+            this.button_add_airport.UseVisualStyleBackColor = false;
+            this.button_add_airport.Click += new System.EventHandler(this.button_add_airport_Click);
             // 
             // button_back
             // 
@@ -185,17 +184,17 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(12, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Страна";
+            this.label3.Text = "Город";
             // 
-            // textBox_airports_country
+            // textBox_airports_city
             // 
-            this.textBox_airports_country.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_airports_country.Location = new System.Drawing.Point(16, 151);
-            this.textBox_airports_country.Name = "textBox_airports_country";
-            this.textBox_airports_country.Size = new System.Drawing.Size(175, 26);
-            this.textBox_airports_country.TabIndex = 30;
+            this.textBox_airports_city.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_airports_city.Location = new System.Drawing.Point(16, 151);
+            this.textBox_airports_city.Name = "textBox_airports_city";
+            this.textBox_airports_city.Size = new System.Drawing.Size(175, 26);
+            this.textBox_airports_city.TabIndex = 30;
             // 
             // label2
             // 
@@ -254,7 +253,6 @@
             this.dataGridView_flights.Name = "dataGridView_flights";
             this.dataGridView_flights.Size = new System.Drawing.Size(612, 296);
             this.dataGridView_flights.TabIndex = 40;
-            this.dataGridView_flights.Visible = false;
             // 
             // iDDataGridViewTextBoxColumn2
             // 
@@ -305,7 +303,6 @@
             this.dataGridView_routes.Name = "dataGridView_routes";
             this.dataGridView_routes.Size = new System.Drawing.Size(378, 296);
             this.dataGridView_routes.TabIndex = 39;
-            this.dataGridView_routes.Visible = false;
             // 
             // iDDataGridViewTextBoxColumn1
             // 
@@ -372,25 +369,6 @@
             this.button_route_add.UseVisualStyleBackColor = false;
             this.button_route_add.Click += new System.EventHandler(this.button_route_add_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(496, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 20);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "Направление";
-            // 
-            // textBox_route_direction
-            // 
-            this.textBox_route_direction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_route_direction.Location = new System.Drawing.Point(500, 151);
-            this.textBox_route_direction.Name = "textBox_route_direction";
-            this.textBox_route_direction.Size = new System.Drawing.Size(175, 26);
-            this.textBox_route_direction.TabIndex = 45;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -442,7 +420,7 @@
             // button_flights_delete
             // 
             this.button_flights_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_flights_delete.Location = new System.Drawing.Point(1124, 129);
+            this.button_flights_delete.Location = new System.Drawing.Point(1163, 130);
             this.button_flights_delete.Name = "button_flights_delete";
             this.button_flights_delete.Size = new System.Drawing.Size(97, 29);
             this.button_flights_delete.TabIndex = 58;
@@ -453,7 +431,7 @@
             // button_flights_change
             // 
             this.button_flights_change.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_flights_change.Location = new System.Drawing.Point(1124, 94);
+            this.button_flights_change.Location = new System.Drawing.Point(1163, 95);
             this.button_flights_change.Name = "button_flights_change";
             this.button_flights_change.Size = new System.Drawing.Size(97, 29);
             this.button_flights_change.TabIndex = 57;
@@ -464,7 +442,7 @@
             // button_flights_add
             // 
             this.button_flights_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button_flights_add.Location = new System.Drawing.Point(1124, 59);
+            this.button_flights_add.Location = new System.Drawing.Point(1163, 60);
             this.button_flights_add.Name = "button_flights_add";
             this.button_flights_add.Size = new System.Drawing.Size(97, 29);
             this.button_flights_add.TabIndex = 56;
@@ -482,14 +460,6 @@
             this.label7_departure_time.Size = new System.Drawing.Size(119, 20);
             this.label7_departure_time.TabIndex = 55;
             this.label7_departure_time.Text = "Время вылета";
-            // 
-            // textBox_flight_departure_time
-            // 
-            this.textBox_flight_departure_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_flight_departure_time.Location = new System.Drawing.Point(908, 151);
-            this.textBox_flight_departure_time.Name = "textBox_flight_departure_time";
-            this.textBox_flight_departure_time.Size = new System.Drawing.Size(175, 26);
-            this.textBox_flight_departure_time.TabIndex = 54;
             // 
             // label8_id_route
             // 
@@ -521,14 +491,6 @@
             this.textBox_flight_id.Size = new System.Drawing.Size(175, 26);
             this.textBox_flight_id.TabIndex = 51;
             // 
-            // textBox_flight_arrival_time
-            // 
-            this.textBox_flight_arrival_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_flight_arrival_time.Location = new System.Drawing.Point(908, 211);
-            this.textBox_flight_arrival_time.Name = "textBox_flight_arrival_time";
-            this.textBox_flight_arrival_time.Size = new System.Drawing.Size(175, 26);
-            this.textBox_flight_arrival_time.TabIndex = 60;
-            // 
             // label8_arrival_time
             // 
             this.label8_arrival_time.AutoSize = true;
@@ -551,13 +513,55 @@
             this.label9_weekday.TabIndex = 62;
             this.label9_weekday.Text = "День недели";
             // 
-            // textBox_fligh_weekday
+            // checkBox_route
             // 
-            this.textBox_fligh_weekday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_fligh_weekday.Location = new System.Drawing.Point(908, 276);
-            this.textBox_fligh_weekday.Name = "textBox_fligh_weekday";
-            this.textBox_fligh_weekday.Size = new System.Drawing.Size(175, 26);
-            this.textBox_fligh_weekday.TabIndex = 63;
+            this.checkBox_route.AutoSize = true;
+            this.checkBox_route.BackColor = System.Drawing.Color.Black;
+            this.checkBox_route.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox_route.ForeColor = System.Drawing.Color.White;
+            this.checkBox_route.Location = new System.Drawing.Point(500, 149);
+            this.checkBox_route.Name = "checkBox_route";
+            this.checkBox_route.Size = new System.Drawing.Size(174, 28);
+            this.checkBox_route.TabIndex = 64;
+            this.checkBox_route.Text = "Точка прибытия";
+            this.checkBox_route.UseVisualStyleBackColor = false;
+            // 
+            // dateTimePicker_flight_departure
+            // 
+            this.dateTimePicker_flight_departure.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dateTimePicker_flight_departure.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker_flight_departure.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_flight_departure.Location = new System.Drawing.Point(908, 151);
+            this.dateTimePicker_flight_departure.Name = "dateTimePicker_flight_departure";
+            this.dateTimePicker_flight_departure.Size = new System.Drawing.Size(212, 29);
+            this.dateTimePicker_flight_departure.TabIndex = 65;
+            // 
+            // dateTimePicker_flight_arrival
+            // 
+            this.dateTimePicker_flight_arrival.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dateTimePicker_flight_arrival.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker_flight_arrival.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_flight_arrival.Location = new System.Drawing.Point(908, 221);
+            this.dateTimePicker_flight_arrival.Name = "dateTimePicker_flight_arrival";
+            this.dateTimePicker_flight_arrival.Size = new System.Drawing.Size(212, 29);
+            this.dateTimePicker_flight_arrival.TabIndex = 66;
+            // 
+            // comboBox_flights_weekdays
+            // 
+            this.comboBox_flights_weekdays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox_flights_weekdays.FormattingEnabled = true;
+            this.comboBox_flights_weekdays.Items.AddRange(new object[] {
+            "Понедельник",
+            "Вторник",
+            "Среда",
+            "Четверг",
+            "Пятница",
+            "Суббота",
+            "Воскресенье"});
+            this.comboBox_flights_weekdays.Location = new System.Drawing.Point(908, 276);
+            this.comboBox_flights_weekdays.Name = "comboBox_flights_weekdays";
+            this.comboBox_flights_weekdays.Size = new System.Drawing.Size(212, 28);
+            this.comboBox_flights_weekdays.TabIndex = 67;
             // 
             // Form_Airports_Routes_Flights
             // 
@@ -565,16 +569,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1522, 665);
-            this.Controls.Add(this.textBox_fligh_weekday);
+            this.Controls.Add(this.comboBox_flights_weekdays);
+            this.Controls.Add(this.dateTimePicker_flight_arrival);
+            this.Controls.Add(this.dateTimePicker_flight_departure);
+            this.Controls.Add(this.checkBox_route);
             this.Controls.Add(this.label9_weekday);
             this.Controls.Add(this.label8_arrival_time);
-            this.Controls.Add(this.textBox_flight_arrival_time);
             this.Controls.Add(this.comboBox_flight_id_route);
             this.Controls.Add(this.button_flights_delete);
             this.Controls.Add(this.button_flights_change);
             this.Controls.Add(this.button_flights_add);
             this.Controls.Add(this.label7_departure_time);
-            this.Controls.Add(this.textBox_flight_departure_time);
             this.Controls.Add(this.label8_id_route);
             this.Controls.Add(this.label9_id_flight);
             this.Controls.Add(this.textBox_flight_id);
@@ -582,20 +587,18 @@
             this.Controls.Add(this.button_route_delete);
             this.Controls.Add(this.button_route_change);
             this.Controls.Add(this.button_route_add);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox_route_direction);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox_route_id);
             this.Controls.Add(this.dataGridView_flights);
             this.Controls.Add(this.dataGridView_routes);
             this.Controls.Add(this.dataGridView_airports);
-            this.Controls.Add(this.button_delete_client);
-            this.Controls.Add(this.button_change_client);
-            this.Controls.Add(this.button_add_client);
+            this.Controls.Add(this.button_delete_airport);
+            this.Controls.Add(this.button_change_airport);
+            this.Controls.Add(this.button_add_airport);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox_airports_country);
+            this.Controls.Add(this.textBox_airports_city);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_airports_name);
             this.Controls.Add(this.label1);
@@ -618,12 +621,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView_airports;
-        private System.Windows.Forms.Button button_delete_client;
-        private System.Windows.Forms.Button button_change_client;
-        private System.Windows.Forms.Button button_add_client;
+        private System.Windows.Forms.Button button_delete_airport;
+        private System.Windows.Forms.Button button_change_airport;
+        private System.Windows.Forms.Button button_add_airport;
         private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_airports_country;
+        private System.Windows.Forms.TextBox textBox_airports_city;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_airports_name;
         private System.Windows.Forms.Label label1;
@@ -631,8 +634,6 @@
         private AirportDataSet airportDataSet;
         private System.Windows.Forms.BindingSource airportsBindingSource;
         private AirportDataSetTableAdapters.AirportsTableAdapter airportsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView_flights;
         private System.Windows.Forms.DataGridView dataGridView_routes;
@@ -651,8 +652,6 @@
         private System.Windows.Forms.Button button_route_delete;
         private System.Windows.Forms.Button button_route_change;
         private System.Windows.Forms.Button button_route_add;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox_route_direction;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_route_id;
@@ -662,13 +661,17 @@
         private System.Windows.Forms.Button button_flights_change;
         private System.Windows.Forms.Button button_flights_add;
         private System.Windows.Forms.Label label7_departure_time;
-        private System.Windows.Forms.TextBox textBox_flight_departure_time;
         private System.Windows.Forms.Label label8_id_route;
         private System.Windows.Forms.Label label9_id_flight;
         private System.Windows.Forms.TextBox textBox_flight_id;
-        private System.Windows.Forms.TextBox textBox_flight_arrival_time;
         private System.Windows.Forms.Label label8_arrival_time;
         private System.Windows.Forms.Label label9_weekday;
-        private System.Windows.Forms.TextBox textBox_fligh_weekday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn City;
+        private System.Windows.Forms.CheckBox checkBox_route;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_flight_departure;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_flight_arrival;
+        private System.Windows.Forms.ComboBox comboBox_flights_weekdays;
     }
 }

@@ -24,16 +24,26 @@ namespace Airport.Редактирование
 
         private void UpdateWindowInformation()
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Clients". При необходимости она может быть перемещена или удалена.
-            this.clientsTableAdapter.Fill(this.airportDataSet.Clients);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Prices". При необходимости она может быть перемещена или удалена.
             this.pricesTableAdapter.Fill(this.airportDataSet.Prices);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Tickets". При необходимости она может быть перемещена или удалена.
             this.ticketsTableAdapter.Fill(this.airportDataSet.Tickets);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Departures". При необходимости она может быть перемещена или удалена.
-            this.departuresTableAdapter.Fill(this.airportDataSet.Departures);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Classes". При необходимости она может быть перемещена или удалена.
-            this.classesTableAdapter.Fill(this.airportDataSet.Classes);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Clients". При необходимости она может быть перемещена или удалена.
+            this.clientsTableAdapter.Fill(this.airportDataSet.Clients);
+
+            SqlCommand cmd_classes = new SqlCommand("SELECT * FROM Classes", connection);
+            SqlDataAdapter da_classes = new SqlDataAdapter(cmd_classes);
+            DataTable dt_classes = new DataTable();
+            da_classes.Fill(dt_classes);
+            DataGridView dtv_classes = new DataGridView();
+            dtv_classes.DataSource = dt_classes;
+
+            SqlCommand cmd_departures = new SqlCommand("SELECT * FROM Departure", connection);
+            SqlDataAdapter da_departures = new SqlDataAdapter(cmd_departures);
+            DataTable dt_departures = new DataTable();
+            da_classes.Fill(dt_departures);
+            DataGridView dtv_departures = new DataGridView();
+            dtv_departures.DataSource = dt_departures;
 
             comboBox_ticket_price.Items.Clear();
             comboBox_ticket_client.Items.Clear();
@@ -56,7 +66,7 @@ namespace Airport.Редактирование
                     comboBox_ticket_client.Items.Add(cellValue);
                 }
             }
-            foreach (DataGridViewRow row in dataGridView_classes.Rows)
+            foreach (DataGridViewRow row in dtv_classes.Rows)
             {
                 if (row.Cells[0].Value != null)
                 {
@@ -64,7 +74,7 @@ namespace Airport.Редактирование
                     comboBox_price_class.Items.Add(cellValue);
                 }
             }
-            foreach (DataGridViewRow row in dataGridView_departures.Rows)
+            foreach (DataGridViewRow row in dtv_departures.Rows)
             {
                 if (row.Cells[0].Value != null)
                 {
@@ -76,7 +86,6 @@ namespace Airport.Редактирование
         
         private void Form_Clients_Tickets_Prices_Load(object sender, EventArgs e)
         {
-
             UpdateWindowInformation();
         }
 
@@ -372,7 +381,7 @@ namespace Airport.Редактирование
 
         private void button_price_add_Click(object sender, EventArgs e)
         {
-            string Proverka = "SELECT count(*) FROM Prices WHERE ID_Class = (SELECT ID_Class WHERE Name = @class) and ID_Departure = @departure";
+            string Proverka = "SELECT count(*) FROM Prices WHERE ID_Class = (SELECT ID_Class FROM Classes WHERE Name = @class) and ID_Departure = @departure";
             SqlCommand Proverka_query = new SqlCommand(Proverka, connection);
             SqlParameter proverka_class = new SqlParameter("@class", comboBox_price_class.Text);
             SqlParameter proverka_departure = new SqlParameter("@departure", comboBox_price_departure.Text);
@@ -422,7 +431,7 @@ namespace Airport.Редактирование
         }
         private void button_price_change_Click(object sender, EventArgs e)
         {
-            string Proverka = "SELECT count(*) FROM Prices WHERE ID_Class = (SELECT ID_Class WHERE Name = @class) and ID_Departure = @departure and ID = @id";
+            string Proverka = "SELECT count(*) FROM Prices WHERE ID_Class = (SELECT ID_Class FROM Classes WHERE Name = @class) and ID_Departure = @departure and ID = @id";
             SqlCommand Proverka_query = new SqlCommand(Proverka, connection);
             SqlParameter proverka_id = new SqlParameter("@id", textBox_price_id.Text);
             SqlParameter proverka_class = new SqlParameter("@class", comboBox_price_class.Text);
@@ -472,14 +481,14 @@ namespace Airport.Редактирование
         }
         private void button_price_delete_Click(object sender, EventArgs e)
         {
-            string Proverka = "SELECT count(*) FROM Prices WHERE ID_Class = (SELECT ID_Class WHERE Name = @class) and ID_Departure = @departure and ID = @id";
+            string Proverka = "SELECT count(*) FROM Prices WHERE ID_Class = (SELECT ID_Class FROM Classes WHERE Name = @class) and ID_Departure = @departure and ID = @id";
             SqlCommand Proverka_query = new SqlCommand(Proverka, connection);
             SqlParameter proverka_id = new SqlParameter("@id", textBox_price_id.Text);
             SqlParameter proverka_class = new SqlParameter("@class", comboBox_price_class.Text);
             SqlParameter proverka_departure = new SqlParameter("@departure", comboBox_price_departure.Text);
 
-            string Change = "DELETE FROM Prices WHERE ID = @id";
-            SqlCommand Change_query = new SqlCommand(Change, connection);
+            string Delete = "DELETE FROM Prices WHERE ID = @id";
+            SqlCommand Delete_query = new SqlCommand(Delete, connection);
             SqlParameter id = new SqlParameter("@id", textBox_price_id.Text);
 
             try
@@ -489,13 +498,13 @@ namespace Airport.Редактирование
                 Proverka_query.Parameters.Add(proverka_id);
                 Proverka_query.Parameters.Add(proverka_class);
                 Proverka_query.Parameters.Add(proverka_departure);
-                Change_query.Parameters.Add(id);
+                Delete_query.Parameters.Add(id);
 
                 if (textBox_price_id.Text != null || comboBox_price_class.Text != null || comboBox_price_departure.Text != null || textBox_price_price.Text != null) // проверка на незаполненые поля
                 {
                     if (Convert.ToInt32(Proverka_query.ExecuteScalar()) == 1)
                     {
-                        Change_query.ExecuteNonQuery();
+                        Delete_query.ExecuteNonQuery();
                         MessageBox.Show("Ценник удалён", "Успешно");
                     }
                     else
