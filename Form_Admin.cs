@@ -13,6 +13,12 @@ namespace Airport
 
         private void Form_Admin_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Prices". При необходимости она может быть перемещена или удалена.
+            this.pricesTableAdapter.Fill(this.airportDataSet.Prices);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Tickets". При необходимости она может быть перемещена или удалена.
+            this.ticketsTableAdapter.Fill(this.airportDataSet.Tickets);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "airportDataSet.Clients". При необходимости она может быть перемещена или удалена.
+            this.clientsTableAdapter.Fill(this.airportDataSet.Clients);
 
         }
 
